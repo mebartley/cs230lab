@@ -1,0 +1,31 @@
+main{
+    font-family: "arial";
+    text-align: center;
+}
+
+p{
+    font-size: 80%;
+    color:rgb(102, 102, 101);
+    padding: 8px 8px 8px 8px;
+}
+
+.about{
+    background:rgb(214, 186, 27);
+    padding: 8px;
+}
+
+img{
+    height: 75px;
+    width: 75px;
+}
+
+.column{
+    float: left;
+    margin-right: 14px;
+    width: 18%;
+}
+
+.card{
+    box-shadow: 0 4px 8px 0 rgb(40, 43, 44);
+    padding: 8px 8px 8px 8px;
+}
