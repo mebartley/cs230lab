@@ -16,13 +16,13 @@ if(isset($_POST['prof-submit'])){
     $ext = strlower(pathinfo($file_name, PATHINFO_EXTENSION));
     $allowed = array('jpg', 'jpeg', 'png', 'svg');
 
-    if($file_error !== 0){
+    if($file_error != 0){
         header("Location: ../profile.php?error=UploadError");
         exit();
     }
 
     if(!in_array($ext, $allowed)){
-        header("Location: ../profile.php");
+        header("Location: ../profile.php?error=InvalidType");
         exit();
     }
 
@@ -34,9 +34,9 @@ if(isset($_POST['prof-submit'])){
     else{
         $new_name = uniqid('', true).".".$ext;
         $destination = '../profiles/'.$new_name;
-        $sql = "UPDATE profiles SET profpic='$desstination' WHERE uname='$uname'";
+        $sql = "UPDATE profiles SET profpic='$destination' WHERE uname='$uname'";
         mysqli_query($conn, $sql);
-        move_uploaded_files($file_tmp_name, $destination);
+        move_uploaded_file($file_tmp_name, $destination);
         header("Location: ../profile.php?success=UploadWin");
         exit();
     }
