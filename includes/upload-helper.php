@@ -2,21 +2,23 @@
 
 require 'dbhandler.php';
 session_start();
-define('MB', 1048576);
+
 define('KB', 1024);
+define('MB', 1048576);
 
 if(isset($_POST['prof-submit'])){
     $uname = $_SESSION['uname'];
     $file = $_FILES['prof-image'];
     $file_name = $file['name'];
-    $file_tmp_name = $file['tmp_name'];
+    $file_temp_name = $file['tmp_name'];
     $file_error = $file['error'];
     $file_size = $file['size'];
 
-    $ext = strlower(pathinfo($file_name, PATHINFO_EXTENSION));
+    $ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+
     $allowed = array('jpg', 'jpeg', 'png', 'svg');
 
-    if($file_error != 0){
+    if($file_error !== 0){
         header("Location: ../profile.php?error=UploadError");
         exit();
     }
@@ -26,13 +28,13 @@ if(isset($_POST['prof-submit'])){
         exit();
     }
 
-    if($file_size > 4*MB){
+    if($file_size > 4194304){
         header("Location: ../profile.php?error=FileSizeExceeded");
         exit();
     }
-
+    
     else{
-        $new_name = uniqid('', true).".".$ext;
+        $new_name = uniqid('',true).".".$ext;
         $destination = '../profiles/'.$new_name;
         $sql = "UPDATE profiles SET profpic='$destination' WHERE uname='$uname'";
         mysqli_query($conn, $sql);
@@ -41,8 +43,8 @@ if(isset($_POST['prof-submit'])){
         exit();
     }
 
-
 } else{
     header("Location: ../profile.php");
     exit();
 }
+

@@ -2,6 +2,7 @@
 require 'includes/header.php';
 ?>
 
+
 <main>
     <link rel = "stylesheet" href = "css/about.css">
     <div class = "about">
@@ -14,8 +15,8 @@ require 'includes/header.php';
                 <img src = "images/hs.jpg">
                 <div class = "container">
                     <h2>Music Critic</h2>
-                    <p>Harry Styles</p>
-                    <p>Email: hs@cs230.com</p>
+                    <p1>Harry Styles</p1>
+                    <p>Email: hs@1d.com</p>
                 </div>
             </div>
         </div>
@@ -24,8 +25,8 @@ require 'includes/header.php';
                 <img src = "images/lp.jpeg">
                 <div class = "container">
                     <h2>Music Critic</h2>
-                    <p>Liam Payne</p>
-                    <p>Email: lp@cs230.com</p>
+                    <p1>Liam Payne</p1>
+                    <p>Email: lp@1d.com</p>
                 </div>
             </div>
         </div>
@@ -34,8 +35,8 @@ require 'includes/header.php';
                 <img src = "images/lt1.jpg">
                 <div class = "container">
                     <h2>Music Critic</h2>
-                    <p>Louis Tomlinson</p>
-                    <p>Email: lt@cs230.com</p>
+                    <p1>Louis Tomlinson</p1>
+                    <p>Email: lt@1d.com</p>
                 </div>
             </div>
         </div>
@@ -44,8 +45,8 @@ require 'includes/header.php';
                 <img src = "images/nh.png">
                 <div class = "container">
                     <h2>Creative Designer</h2>
-                    <p>Niall Horan</p>
-                    <p>Email: nh@cs230.com</p>
+                    <p1>Niall Horan</p1>
+                    <p>Email: nh@1d.com</p>
                 </div>
             </div>
         </div>
@@ -54,8 +55,8 @@ require 'includes/header.php';
                 <img src = "images/zm.jpg">
                 <div class = "container">
                     <h2>Review Editor</h2>
-                    <p>Zayn Malik</p>
-                    <p>Email: zm@cs230.com</p>
+                    <p1>Zayn Malik</p1>
+                    <p>Email: zm@1d.com</p>
                 </div>
             </div>
         </div>

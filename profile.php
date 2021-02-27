@@ -31,6 +31,7 @@ if(isset($_SESSION['uid'])){
     $photo = $row['profpic']; // path to the profile picture
 
     ?>
+
     <div class="h-50 center-me text-center">
         <div class="my-auto">
             <form action="includes/upload-helper.php" method="POST" enctype="multipart/form-data">
@@ -42,10 +43,12 @@ if(isset($_SESSION['uid'])){
 
                 </div>
                 <div class="form-group">
-                    <textarea name="bio" id="bio" cols="30" rows="10" placeholder="bio..." style="text-align: center;"></textarea>
+                    <textarea name="bio" id="bio" cols="30" rows="10" placeholder="bio..."
+                        style="text-align: center;"></textarea>
                 </div>
                 <div class="form-group">
-                    <button type="submit" name="prof-submit" class="btn btn-outline-success btn-lg btn-block">Upload</button>
+                    <button type="submit" name="prof-submit"
+                        class="btn btn-outline-success btn-lg btn-block">Upload</button>
                 </div>
 
             </form>
