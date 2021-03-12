@@ -17,3 +17,10 @@
     font-family: "Lucida Console", Courier, monospace;
     font-weight: bold;
 }
+
+#gallery-display{
+    display: block;
+    width: 150px;
+    margin: 10px auto;
+    border-radius: 10%;
+}

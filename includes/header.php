@@ -1,7 +1,8 @@
+<!DOCTYPE html>
+<html>
 <?php
-session_start();
-?>
-
+	session_start();
+	?>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,13 +20,8 @@ session_start();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
-    <script src="https://kit.fontawesome.com/0809ee8fa6.js" crossorigin="anonymous">
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-    </script>
-
-    <link rel="stylesheet" href="../css/signup.css">
-
+    <script src="https://kit.fontawesome.com/0809ee8fa6.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -35,31 +31,30 @@ session_start();
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <?php if (isset($_SESSION['uid'])){
-                    echo '<li class="nav-item">
-                    <a class="nav-link" href="includes/logout.php">Logout</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="gallery.php">Gallery</a>
-                </li> 
-                <li class="nav-item">
-                    <a class="nav-link" href="admin.php>Admin</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="profile.php>Profile</a>
-                </li>';
-                }
-                else{
-                    echo '<li class="nav-item">
-                    <a class="nav-link" href="login.php">Login</a>
-                    </li>';
-                }
-                ?>
+	                  echo '<li class="nav-item">
+	                  <a class = "nav-link" href="includes/logout.php">Logout</a>
+	                  </li>
+	                    <li class ="nav-item">
+	                    <a class ="nav-link" href="profile.php">Profiles</a>
+	                    </li>
+	                    <li class ="nav-item">
+	                    <a class ="nav-link" href="admin.php">Admin</a>
+	                    </li>
+	                    <li class ="nav-item">
+	                    <a class ="nav-link" href="gallery.php">Gallery</a>
+	                    </li>';
+	              }
+	              else{
+	                  echo '<li class = "nav-item">
+	                  <a class = "nav-link" href="login.php">Login</a>
+	                  </li>';
+	              }
+	              ?>
                     <li class="nav-item active">
-                        <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="index.php">Home<span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>
