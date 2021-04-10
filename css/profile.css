@@ -1,3 +1,12 @@
+.bg-cover {
+    background-image: url("../images/main-bg-1.jpg");
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-attachment: scroll;
+    background-repeat: no-repeat; 
+}
+
 .center-me{
     display: flex;
     justify-content: center;

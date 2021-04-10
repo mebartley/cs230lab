@@ -1,3 +1,12 @@
+.bg-cover {
+    background-image: url("../images/main-bg-1.jpg");
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-attachment: scroll;
+    background-repeat: no-repeat; 
+}
+
 h1{
     text-align: center;
 }
@@ -34,7 +43,7 @@ img{
 }
 
 .gallery-container a{
-    background-color: rgb(245, 155, 225);
+    background-color: rgb(240, 181, 222);
     background-position: center;
     background-size: cover;
     border-radius: 10px;
@@ -42,5 +51,6 @@ img{
 }
 .gallery-container a:hover{
     opacity: 70%;
-    text-decoration-color:rgb(99, 23, 89);
+    text-decoration-color:rgb(226, 170, 219);
 }
+

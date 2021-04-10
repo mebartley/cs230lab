@@ -4,10 +4,11 @@
 
 <main>
     <link rel="stylesheet" href="css/gallery.css">
-    
-    <h1>Gallery</h1>
-    <div class="gallery-container">
-        <?php
+	<div class="bg-cover">
+
+        <h1>Gallery</h1>
+        <div class="gallery-container">
+            <?php
 	        include_once 'includes/dbhandler.php';
 	        $sql = "SELECT * FROM gallery ORDER BY upload_date DESC";
 	        $query = mysqli_query($conn, $sql);
@@ -22,5 +23,7 @@
 	           </div>';
 	        }
 	        ?>
-    </div>
+        </div>
+		</div>
+    
 </main>
