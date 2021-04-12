@@ -5,45 +5,48 @@
 
 <main>
     <link rel="stylesheet" href="css/profile.css">
-    <script>
-    function triggered() {
-        document.querySelector("#gallery-image").click();
-    }
-    function preview(e) {
-        if (e.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                document.querySelector('#gallery-display').setAttribute('src', e.target.result);
-            }
-            reader.readAsDataURL(e.files[0]);
+    <div class="bg-cover">
+        <script>
+        function triggered() {
+            document.querySelector("#gallery-image").click();
         }
-    }
-    </script>
-    <?php
+
+        function preview(e) {
+            if (e.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    document.querySelector('#gallery-display').setAttribute('src', e.target.result);
+                }
+                reader.readAsDataURL(e.files[0]);
+            }
+        }
+        </script>
+        <?php
 	if(isset($_SESSION['uid'])){
 	?>
-    <div class="h-50 center-me text-center">
-        <div class="my-auto">
-            <form action="includes/gallery-helper.php" method="POST" enctype="multipart/form-data">
-                <div class="form-group">
-                    <img src="images/default.png" alt="profile pic" onclick="triggered();" id="gallery-display">
-                    <input type="text" name="title" class="form-control" placeholder="Title">
-                    <input type="file" name="gallery-image" id="gallery-image" onchange="preview(this)"
-                        class="form-control" style="display: none;">
-                </div>
-                <div class="form-group">
-                    <textarea name="descript" id="bio" cols="30" rows="10" placeholder="Description"
-                        style="text-align: center;"></textarea>
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-lg btn-outline-success btn-block" name="gallery-submit"
-                        type="submit">upload</button>
+        <div class="h-50 center-me text-center">
+            <div class="my-auto">
+                <form action="includes/gallery-helper.php" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <img src="images/default.png" alt="profile pic" onclick="triggered();" id="gallery-display">
+                        <input type="text" name="title" class="form-control" placeholder="Title">
+                        <input type="file" name="gallery-image" id="gallery-image" onchange="preview(this)"
+                            class="form-control" style="display: none;">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="descript" id="bio" cols="30" rows="10" placeholder="Description"
+                            style="text-align: center;"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-outline-success btn-block" name="gallery-submit"
+                            type="submit">upload</button>
 
-                </div>
-            </form>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
-    <?php
+        <?php
 	}
 	?>
+    </div>
 </main>

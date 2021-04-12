@@ -4,8 +4,7 @@
 
 <main>
     <link rel="stylesheet" href="css/gallery.css">
-	<div class="bg-cover">
-
+    <div class="bg-cover">
         <h1>Gallery</h1>
         <div class="gallery-container">
             <?php
@@ -24,6 +23,5 @@
 	        }
 	        ?>
         </div>
-		</div>
-    
+    </div>
 </main>

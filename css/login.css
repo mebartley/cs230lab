@@ -1,5 +1,5 @@
 .bg-cover {
-    background-image: url("../images/main-bg-1.jpg");
+    background-image: url("../images/backgrounds/main-bg-1.jpg");
     height: 100vh;
     background-position: center;
     background-size: cover;
@@ -14,7 +14,7 @@
 }
 
 .form-signin{
-    background-color:rgb(212, 188, 235);
+    background-color:rgb(214, 186, 27, 0.6);
     padding: 20px;
     border-radius: 20;
     text-align: center;

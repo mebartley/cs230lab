@@ -30,7 +30,8 @@ $item = $_GET['id'];
 	          <img class="mr-3" src="'.$picpath['profpic'].'" style="max-width: 75px; max-height: 75px; border-radius: 50%;">
 	          <div class="media-body">
 	            <h4 class="mt-0">'.$row['uname'].'</h4>
-	            <h5 style="color: red;">Rating: '.$row['ratingnum'].'</h5>
+	            <h5 style="color: gold;">Rating: '.$row['ratingnum'].'</h5>
+				<p>'.$row['title'].'</p>
 	            <p>'.$row['revdate'].'</p>
 	            <p>'.$row['reviewtext'].'</p>
 	          </div>

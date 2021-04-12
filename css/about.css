@@ -1,3 +1,12 @@
+.bg-cover {
+    background-image: url("../images/backgrounds/index-background.svg");
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-attachment: scroll;
+    background-repeat: no-repeat; 
+}
+
 main{
     font-family: "arial";
     text-align: center;
@@ -5,14 +14,14 @@ main{
 }
 
 p{
-    font-size: 80%;
-    color:rgb(102, 102, 101);
+    font-size: 100%;
+    color:rgb(0, 0, 0);
     padding: 8px 8px 8px 8px;
 }
 
 .about{
     background:rgb(214, 186, 27);
-    padding: 8px;
+    padding: 8px 8px 8px 8px;
 }
 
 img{
@@ -23,19 +32,23 @@ img{
 }
 
 .column{
-    float: left;
+    float:left;
+    align-items: center;
     margin-right: 12px;
     width: 18%;
+    padding: 8px;
+}
+
+.row{
+    padding-top: 32px;
+    
 }
 
 .card{
-    box-shadow: 0 4px 8px 0 rgb(40, 43, 44);
+    box-shadow: 0 4px 8px 0 rgb(40, 43, 44, 0.6);
+    background-color: rgba(214, 186, 27, 0.2);
     padding: 4px 4px 4px 4px;
     align-items: center;
-}
-
-.container{
-    font-size: 80% ;
 }
 
 h2{
@@ -44,5 +57,7 @@ h2{
 }
 
 p1{
-    font-size: 125%;
+    font-size: 100%;
+    color:rgb(0, 0, 0);
+    padding: 8px 8px 8px 8px;
 }
