@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 25, 2021 at 11:26 AM
+-- Generation Time: Apr 12, 2021 at 08:00 PM
 -- Server version: 5.7.33-0ubuntu0.18.04.1
 -- PHP Version: 7.2.24-0ubuntu0.18.04.7
 
@@ -31,7 +31,7 @@ CREATE TABLE `gallery` (
   `title` varchar(60) NOT NULL,
   `descript` text NOT NULL,
   `picpath` varchar(80) NOT NULL,
-  `upload_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `upload_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `rating` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf16;
 
@@ -40,8 +40,10 @@ CREATE TABLE `gallery` (
 --
 
 INSERT INTO `gallery` (`pid`, `title`, `descript`, `picpath`, `upload_date`, `rating`) VALUES
-(8, 'Harry Styles', '', '../gallery/604aea79684100.09412142.jpg', '2021-03-11 23:13:45', NULL),
-(9, 'Niall Horan', 'Was once in One Direction...', '../gallery/604aea994675a5.58030626.png', '2021-03-11 23:14:17', NULL);
+(1, 'Elvis Presley', 'Elvis Presley is an American popular singer widely known as the â€œKing of Rock and Rollâ€ and one of rock music\'s dominant performers.', '../gallery/6074c6ab8ec0b1.12453506.jpg', '2021-04-12 18:16:11', NULL),
+(2, 'Taylor Swift', 'Taylor Swift is a Grammy Award-winning American singer-songwriter who made a splash in the country music and has gone on to become one of the top acts in popular music.', '../gallery/6074c7189a7c24.61800613.jpg', '2021-04-12 18:18:00', NULL),
+(3, 'I Prevail', 'I Prevail is an American metal core band formed in New Baltimore, Michigan. They  rose to popularity from releasing a metal cover of Taylor Swift\'s \"Blank Space\".', '../gallery/6074c910b50ec5.65835244.jpeg', '2021-04-12 18:26:24', NULL),
+(4, 'Elton John', 'Elton John is a British singer, pianist and composer. He has found success on Broadway along with selling more than 300 million records. ', '../gallery/6074c974131f16.17528447.jpeg', '2021-04-12 18:28:04', NULL);
 
 -- --------------------------------------------------------
 
@@ -61,7 +63,12 @@ CREATE TABLE `profiles` (
 --
 
 INSERT INTO `profiles` (`pid`, `fname`, `uname`, `profpic`) VALUES
-(3, 'Morgan', 'mebartley', '../profiles/604aea66f04fb0.17653335.jpg');
+(4, 'Morgan', 'mebartley', '../profiles/6074a1eb8449a3.18950379.jpg'),
+(5, 'Harry', 'hstyles', '../profiles/6074a3495bf465.57803250.jpg'),
+(7, 'Louis', 'ltomlinson', '../profiles/6074d8615f1562.43164107.jpg'),
+(8, 'Liam', 'lpayne', '../profiles/6074db723e2df6.31523386.jpeg'),
+(9, 'Zayn', 'zmalik', '../profiles/6074dbf5a6a1e0.49315899.jpg'),
+(11, 'Niall', 'nihoran', '../profiles/6074db0196f922.05160701.png');
 
 -- --------------------------------------------------------
 
@@ -85,8 +92,16 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`revid`, `itemid`, `uname`, `title`, `reviewtext`, `revdate`, `ratingnum`, `status`) VALUES
-(3, 7, 'mebartley', 'One Direction', 'Greatest Band Ever', '2021-03-19 05:09:22', 5, 1),
-(4, 7, 'mebartley', 'One Direction', 'Good', '2021-03-19 05:09:57', 4, 1);
+(2, 4, 'hstyles', 'Goodbye Yellow Brick Road - Album', 'Elton John is way better than I could explain. ', '2021-04-12 23:24:51', 5, 1),
+(5, 1, 'hstyles', 'Back in Memphis - Album', 'A legend!', '2021-04-12 23:31:12', 5, 1),
+(8, 1, 'ltomlinson', 'Back in Memphis - Album', 'Inspirational dude.', '2021-04-12 23:35:26', 4, 1),
+(9, 3, 'ltomlinson', 'Trauma - Album', '\"Bow Down\" is so good!', '2021-04-12 23:37:07', 4, 1),
+(10, 4, 'ltomlinson', 'Wonderful Crazy Night - Album', 'His early albums are better than his newer ones. ', '2021-04-12 23:39:36', 3, 1),
+(11, 3, 'nihoran', 'Trauma - Album', 'They have a wide variety of sounds on this album. ', '2021-04-12 23:43:57', 5, 1),
+(12, 2, 'nihoran', 'Evermore - Album', 'A lot was expected with this album and she delivered. \r\n', '2021-04-12 23:44:28', 5, 1),
+(13, 1, 'lpayne', 'Blue Hawaii', 'Great vibes but not my style. ', '2021-04-12 23:45:41', 3, 1),
+(14, 2, 'lpayne', 'Evermore - Album', 'She has worked hard and you can tell with this album. ', '2021-04-12 23:46:41', 4, 1),
+(15, 3, 'zmalik', 'Trauma - Album', 'Not my favorite. ', '2021-04-12 23:47:43', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -108,9 +123,14 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`uid`, `fname`, `lname`, `uname`, `password`, `email`) VALUES
-(1, 'Morgan', 'Bartley', 'morgan', '$2y$10$e091UnXOqY/j1LF1pJD5jub3.MA5YhG837wgkzYbbgHsQ6R/2hcJq', 'morgan@wvu.edu'),
-(2, 'Taylor', 'Swift', 'tswift', '$2y$10$L5O9NPs/bQ1EcUxXzm7qBO3PWWdsVS3CAMeNpde5Ji9zy4/KGG2kS', 'tswift@gmail.com'),
-(3, 'Morgan', 'Bartley', 'mebartley', '$2y$10$paqJ2TW4nvNBLGupyxWytuxU03vGo1MO.mpL0pCZY6pa/PGAaXNQa', 'mebartley@mix.wvu.edu');
+(4, 'Morgan', 'Bartley', 'mebartley', '$2y$10$qTfonpKzfOUI.OjdLLWKw.UCYZ8r3eFl35dIqhawUX0ugtwt/Uw5C', 'mebartley@mix.wvu.edu'),
+(5, 'Harry', 'Styles', 'hstyles', '$2y$10$ursETuVvNBb15TfZe4Xnt.lNY/CmGhByGl2htr2fRaVBEnLTGtnfq', 'hstyles@gmail.com'),
+(6, 'Niall', 'Horan', 'nhoran', '$2y$10$WLYmAHcV.8sTco83nc8SbufTCS5YqHMhporBmaia0ZbZSNujkJm1O', 'nhoran@gmail.com'),
+(7, 'Louis', 'Tomlinson', 'ltomlinson', '$2y$10$/dzAdhdbafg9k4NYykCC0OEP9mu6xR2EEB1IpssNCzAy6arMLI0li', 'ltomlinson@gmail.com'),
+(8, 'Liam', 'Payne', 'lpayne', '$2y$10$EI2diZ3ubPYZuOXRKTUiPe9d3mxNyp2DOKONRe/UERFfv.msFFY16', 'lpayne@gmail.com'),
+(9, 'Zayn', 'Malik', 'zmalik', '$2y$10$PqLJTP9eQeu3PZ3wdObyTurpQ1EZiViPstUIU0wRVuL05TTTYvkam', 'zmalik@gmail.com'),
+(10, 'fefh', 'sdghk', 'skedfghbvk', '$2y$10$KbE0q8PqsRER6W/spcTbiOx45B48r5TGAG/nhjIWLUrPJ/UU2s4uq', 'SJDRUHVGK@SJEDKL.COM'),
+(11, 'Niall', 'Horan', 'nihoran', '$2y$10$yETfyAubKAzwbw1di/UEx.rZnXQP/zTNMFCHfPQz1CnOS0snYLafK', 'nihoran@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -148,22 +168,22 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `profiles`
 --
 ALTER TABLE `profiles`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `revid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id for each review', AUTO_INCREMENT=5;
+  MODIFY `revid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id for each review', AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
